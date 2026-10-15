@@ -1,0 +1,317 @@
+/* Zmienne CSS - Design Tokens (Wymóg DoD) */
+:root {
+    --color-primary: #0ea5e9;
+    --color-primary-hover: #0284c7;
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-text: #0f172a;
+    --color-text-muted: #64748b;
+    --color-border: #cbd5e1;
+    
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    
+    --radius-md: 8px;
+    --font-base: system-ui, -apple-system, sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; 
+    font-family: var(--font-base);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) 20px;
+}
+
+section, aside {
+    margin-bottom: 80px;
+    scroll-margin-top: 100px; 
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-surface);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+
+    a {
+        text-decoration: none;
+        color: var(--color-text);
+        font-weight: 500;
+        transition: color 0.2s ease-in-out;
+
+        &:hover, &:focus-visible {
+            color: var(--color-primary);
+        }
+    }
+}
+
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    
+    h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        color: var(--color-primary);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .subtitle {
+        font-size: 1.25rem;
+        color: var(--color-text-muted);
+    }
+}
+
+
+.about-content {
+    display: grid;
+    gap: var(--spacing-lg);
+    align-items: center;
+
+    figure img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border-radius: var(--radius-md);
+        display: block;
+        margin: 0 auto;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    figcaption {
+        text-align: center;
+        margin-top: var(--spacing-sm);
+        font-size: 0.875rem;
+        color: var(--color-text-muted);
+    }
+}
+
+
+.projects-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-card {
+    background-color: var(--color-surface);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover, &:focus-within {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .card-tag {
+        display: inline-block;
+        background-color: var(--color-bg);
+        color: var(--color-primary);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-sm);
+        border: 1px solid var(--color-border);
+    }
+
+    h3 {
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+
+.external-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+
+    a {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 500;
+        
+        &:hover, &:focus-visible {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    background-color: var(--color-surface);
+    padding: 32px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+        font-weight: 500;
+    }
+
+    input, textarea {
+        padding: 12px;
+        border: 1px solid var(--color-border);
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.2s, outline 0.2s;
+
+        /* Dostępność: Wyróżnienie aktywnego pola (A11y) */
+        &:focus-visible {
+            outline: 2px solid var(--color-primary);
+            border-color: transparent;
+        }
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+}
+
+.btn-submit {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: var(--spacing-sm);
+
+    &:hover, &:focus-visible {
+        background-color: var(--color-primary-hover);
+    }
+}
+
+.widgets-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    justify-content: center;
+}
+
+.widget-slot {
+    flex: 1 1 300px;
+    min-height: 200px;
+    background-color: var(--color-bg);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg) 20px;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+
+
+@media (min-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .external-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: 16px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+}
