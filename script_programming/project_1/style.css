@@ -32,10 +32,13 @@ html {
 }
 
 
-main {
+.layout-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: var(--spacing-lg) 20px;
+    display: flex;
+    flex-direction: column; 
+    gap: 40px;
 }
 
 section, aside {
@@ -298,20 +301,23 @@ footer {
     }
 }
 
-@media (max-width: 767px) {
-    .navbar {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        padding: 16px;
+
+@media (min-width: 992px) {
+    .layout-container {
+        flex-direction: row; 
+        align-items: flex-start;
     }
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
+    .content-column {
+        flex: 3; 
     }
-    
-    .contact-form {
-        padding: 20px;
+
+    .sidebar-column {
+        flex: 1; 
+        position: sticky; 
+        top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
     }
 }

@@ -19,103 +19,109 @@
                 </ul>
             </nav>
         </header>
+        <main class="layout-container">
+            
+            <div class="content-column">
+                <section id="hero" class="hero-section">
+                    <h1>Konrad Matusik</h1>
+                    <p class="subtitle">Student Cyberbezpieczeństwa</p>
+                </section>
 
-        <main>
-            <section id="hero" class="hero-section">
-                <h1>Konrad Matusik</h1>
-                <p class="subtitle">Student Cyberbezpieczeństwa</p>
-            </section>
-
-            <section id="o-mnie" class="about-section">
-                <h2>O mnie</h2>
-                <div class="about-content">
-                    <figure>
-                        <img src="assets/fotografia.webp" alt="Zdjęcie progilowe">
-                        <figcaption>Student, Akademia Górniczo-Huynicza w Krakowie</figcaption>
-                    </figure>
-                    <article>
-                        <p>Jestem studentem 3. semestru cyberbezpieczeństwa. Technologie sieciowe
-                            , infrastruktura chmurowa oraz bezpieczeństwo systemów operacyjnych 
-                            to moje główne obszary zainteresowań. W wolnym czasie aktywnie 
-                            trenuję umiejętności ofensywne, biorąc udział w wyzwaniach CTF (Hack The Box, TryHackMe, picoCTF)
-                            oraz rozwijając autorskie narzędzia do analizy bezpieczeństwa.
-                            Poza ekranem komputera pasjonuję się inwestowaniem, piłką nożną oraz grą w szachy</p>
-                    </article>
-                </div>
-            </section>
-
-            <section id="projekty" class="projects-section">
-                <h2>Wybrane Projekty</h2>
-                <div class="projects-grid">
-
-                    <article class="project-card">
-                        <img src="assets/laptop.svg" alt="Ikona laptopa" class="card-icon">
-                        <span class="card-tag">C++ / CLI</span>
-                        <h3>Menadżer Haseł CLI</h3>
-                        <p>Narzędzie konsolowe do bezpiecznego przechowywania danych napisane w C++,
-                            wykorzystujące niestandardowe struktury pamięciowe do ochrony kluczy.</p>
-                    </article>
-
-                    <article class="project-card">
-                        <img src="assets/shield.svg" alt="Ikona tarczy" class="card-icon">
-                        <span class="card-tag">Cybersecurity</span>
-                        <h3>CTF Write-ups</h3>
-                        <p>Zbiór technicznych analiz (write-upów) dokumentujących eksplotację Podatności
-                            systemowych i sieciowych podczas turniejów Capture The Flag.
-                        </p>
-                    </article>
-
-                    <article class="project-card">
-                        <img src="assets/router.svg" alt="Ikona routera" class="card-icon">
-                        <span class="card-tag">Sieci Komputerowe</span>
-                        <h3>Infrastruktura Cisco</h3>
-                        <p>Projekt wdrożenia dynamicznego routingu OSPF, redundancji,
-                            list ACL oraz kompleksowej segmentacji VLAN dla symulowanej 
-                            infrastruktury enterprise
-                        </p>
-                    </article>
-                </div>
-            </section>
-
-            <aside id="linki" class="links-section">
-                <h2>Odnośniki Zewnętrzne</h2>
-                <ul class="external-links">
-                    <li><a href="https://github.com/kmatusik-76" target="_blank" rel="noopener noreferrer">Repozytorium GitHub</a></li>
-                    <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">Dokumentacja MDN</a></li>
-                    <li><a href="https://owasp.org/" target="_blank" rel="noopener noreferrer">Standardy OWASP</a></li>
-                </ul>
-            </aside>
-
-            <section id="kontakt" class="contact-section">
-                <h2>Napisz do mnie</h2>
-                <form action="/zapisz" method="POST" autocomplete="on" class="contact-form">
-                    <div class="form-group">
-                        <label for="imie">Imię:</label>
-                        <input type="text" id="imie" name="imie" placeholder="np. Jan" required>
+                <section id="o-mnie" class="about-section">
+                    <h2>O mnie</h2>
+                    <div class="about-content">
+                        <figure>
+                            <img src="assets/fotografia.webp" alt="Zdjęcie progilowe">
+                            <figcaption>Student, Akademia Górniczo-Huynicza w Krakowie</figcaption>
+                        </figure>
+                        <article>
+                            <p>Jestem studentem 3. semestru cyberbezpieczeństwa. Technologie sieciowe
+                                , infrastruktura chmurowa oraz bezpieczeństwo systemów operacyjnych 
+                                to moje główne obszary zainteresowań. W wolnym czasie aktywnie 
+                                trenuję umiejętności ofensywne, biorąc udział w wyzwaniach CTF (Hack The Box, TryHackMe, picoCTF)
+                                oraz rozwijając autorskie narzędzia do analizy bezpieczeństwa.
+                                Poza ekranem komputera pasjonuję się inwestowaniem, piłką nożną oraz grą w szachy</p>
+                        </article>
                     </div>
-                    <div class="form-group">
-                        <label for="nazwisko">Nazwisko:</label>
-                        <input type="text" id="nazwisko" name="nazwisko" placeholder="np. Kowalski" required>
+                </section>
+
+                <section id="projekty" class="projects-section">
+                    <h2>Wybrane Projekty</h2>
+                    <div class="projects-grid">
+
+                        <article class="project-card">
+                            <img src="assets/laptop.svg" alt="Ikona laptopa" class="card-icon">
+                            <span class="card-tag">C++ / CLI</span>
+                            <h3>Menadżer Haseł CLI</h3>
+                            <p>Narzędzie konsolowe do bezpiecznego przechowywania danych napisane w C++,
+                                wykorzystujące niestandardowe struktury pamięciowe do ochrony kluczy.</p>
+                        </article>
+
+                        <article class="project-card">
+                            <img src="assets/shield.svg" alt="Ikona tarczy" class="card-icon">
+                            <span class="card-tag">Cybersecurity</span>
+                            <h3>CTF Write-ups</h3>
+                            <p>Zbiór technicznych analiz (write-upów) dokumentujących eksplotację Podatności
+                                systemowych i sieciowych podczas turniejów Capture The Flag.
+                            </p>
+                        </article>
+
+                        <article class="project-card">
+                            <img src="assets/router.svg" alt="Ikona routera" class="card-icon">
+                            <span class="card-tag">Sieci Komputerowe</span>
+                            <h3>Infrastruktura Cisco</h3>
+                            <p>Projekt wdrożenia dynamicznego routingu OSPF, redundancji,
+                                list ACL oraz kompleksowej segmentacji VLAN dla symulowanej 
+                                infrastruktury enterprise
+                            </p>
+                        </article>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Adres e-mail:</label>
-                        <input type="email" id="email" name="email" placeholder="jan.kowalski@domena.pl" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="wiadomosc">Wiadomosc:</label>
-                        <textarea id="wiadomosc" name="wiadomosc" placeholder="Wpisz treść wiadomości (min. 10 znaków)..." minlength="10" required></textarea>der
-                    </div>
-                    <button type="submit" class="btn-submit">Wyślij wiadomość</button>
-                </form>
-            </section>
-            <aside class="widgets-section">
-            <h2>Moduły Dynamiczne (Lab 02)</h2>
-            <div class="widgets-container">
-                <div id="weather-box" class="widget-slot">Miejsce na widget pogodowy</div>
-                <div id="calendar-box" class="widget-slot">Miejsce na kalendarz</div>
+                </section>
+
+                <section id="kontakt" class="contact-section">
+                    <h2>Napisz do mnie</h2>
+                    <form action="/zapisz" method="POST" autocomplete="on" class="contact-form">
+                        <div class="form-group">
+                            <label for="imie">Imię:</label>
+                            <input type="text" id="imie" name="imie" placeholder="np. Jan" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nazwisko">Nazwisko:</label>
+                            <input type="text" id="nazwisko" name="nazwisko" placeholder="np. Kowalski" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adres e-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="jan.kowalski@domena.pl" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="wiadomosc">Wiadomosc:</label>
+                            <textarea id="wiadomosc" name="wiadomosc" placeholder="Wpisz treść wiadomości (min. 10 znaków)..." minlength="10" required></textarea>der
+                        </div>
+                        <button type="submit" class="btn-submit">Wyślij wiadomość</button>
+                    </form>
+                </section>
             </div>
-        </aside>
-        </main>  
+
+            <div class="sidebar-column">
+                <aside id="linki" class="links-section">
+                    <h2>Odnośniki</h2>
+                    <ul class="external-links">
+                        <li><a href="https://github.com/kmatusik-76" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+                        <li><a href="https://owasp.org/" target="_blank" rel="noopener noreferrer">OWASP</a></li>
+                    </ul>
+                </aside>
+
+                <aside class="widgets-section">
+                    <h2>Moduły (Lab 02)</h2>
+                    <div class="widgets-container">
+                        <div id="weather-box" class="widget-slot">Widget pogodowy</div>
+                        <div id="calendar-box" class="widget-slot">Kalendarz</div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        
         <footer>
             <p>&copy; 2026 Konrad Matusik - Projekt Laboratorium 01</p>
         </footer>
