@@ -2,10 +2,11 @@
 <html lang="pl">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Konrad Matusik - Profil Inżynierski</title>
         <link rel="icon" type="image/svg+xml" href="assets/student.svg">
         <link rel="stylesheet" href="style.css">
+        <script type="module" src="js/main.js"></script>
     </head>
     <body>
         <header>
@@ -17,10 +18,11 @@
                     <li><a href="#linki">Linki</a></li>
                     <li><a href="#kontakt">Kontakt</a></li>
                 </ul>
+                <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Tryb ciemny</button>
             </nav>
         </header>
         <main class="layout-container">
-            
+
             <div class="content-column">
                 <section id="hero" class="hero-section">
                     <h1>Konrad Matusik</h1>
@@ -31,16 +33,16 @@
                     <h2>O mnie</h2>
                     <div class="about-content">
                         <figure>
-                            <img src="assets/fotografia.webp" alt="Zdjęcie progilowe">
-                            <figcaption>Student, Akademia Górniczo-Huynicza w Krakowie</figcaption>
+                            <img src="assets/fotografia.webp" alt="Zdjęcie profilowe">
+                            <figcaption>Student, Akademia Górniczo-Hutnicza w Krakowie</figcaption>
                         </figure>
                         <article>
-                            <p>Jestem studentem 3. semestru cyberbezpieczeństwa. Technologie sieciowe
-                                , infrastruktura chmurowa oraz bezpieczeństwo systemów operacyjnych 
-                                to moje główne obszary zainteresowań. W wolnym czasie aktywnie 
+                            <p>Jestem studentem 3. semestru cyberbezpieczeństwa. Technologie sieciowe,
+                                infrastruktura chmurowa oraz bezpieczeństwo systemów operacyjnych
+                                to moje główne obszary zainteresowań. W wolnym czasie aktywnie
                                 trenuję umiejętności ofensywne, biorąc udział w wyzwaniach CTF (Hack The Box, TryHackMe, picoCTF)
                                 oraz rozwijając autorskie narzędzia do analizy bezpieczeństwa.
-                                Poza ekranem komputera pasjonuję się inwestowaniem, piłką nożną oraz grą w szachy</p>
+                                Poza ekranem komputera pasjonuję się inwestowaniem, piłką nożną oraz grą w szachy.</p>
                         </article>
                     </div>
                 </section>
@@ -61,7 +63,7 @@
                             <img src="assets/shield.svg" alt="Ikona tarczy" class="card-icon">
                             <span class="card-tag">Cybersecurity</span>
                             <h3>CTF Write-ups</h3>
-                            <p>Zbiór technicznych analiz (write-upów) dokumentujących eksplotację Podatności
+                            <p>Zbiór technicznych analiz (write-upów) dokumentujących eksploatację podatności
                                 systemowych i sieciowych podczas turniejów Capture The Flag.
                             </p>
                         </article>
@@ -71,8 +73,8 @@
                             <span class="card-tag">Sieci Komputerowe</span>
                             <h3>Infrastruktura Cisco</h3>
                             <p>Projekt wdrożenia dynamicznego routingu OSPF, redundancji,
-                                list ACL oraz kompleksowej segmentacji VLAN dla symulowanej 
-                                infrastruktury enterprise
+                                list ACL oraz kompleksowej segmentacji VLAN dla symulowanej
+                                infrastruktury enterprise.
                             </p>
                         </article>
                     </div>
@@ -94,7 +96,7 @@
                             <input type="email" id="email" name="email" placeholder="jan.kowalski@domena.pl" required>
                         </div>
                         <div class="form-group">
-                            <label for="wiadomosc">Wiadomosc:</label>
+                            <label for="wiadomosc">Wiadomość:</label>
                             <textarea id="wiadomosc" name="wiadomosc" placeholder="Wpisz treść wiadomości (min. 10 znaków)..." minlength="10" required></textarea>
                         </div>
                         <button type="submit" class="btn-submit">Wyślij wiadomość</button>
@@ -110,10 +112,32 @@
                         <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
                         <li><a href="https://owasp.org/" target="_blank" rel="noopener noreferrer">OWASP</a></li>
                     </ul>
+
+                    <div class="link-registry">
+                        <h3>Mój rejestr linków</h3>
+                        <form id="link-form" class="link-form" novalidate>
+                            <div class="form-group">
+                                <label for="link-name">Nazwa:</label>
+                                <input type="text" id="link-name" name="nazwa" placeholder="np. Dokumentacja MDN" autocomplete="off" aria-describedby="link-name-error">
+                                <p class="field-error" id="link-name-error"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="link-url">Adres URL:</label>
+                                <input type="text" id="link-url" name="url" inputmode="url" placeholder="https://example.com" autocomplete="off" aria-describedby="link-url-error">
+                                <p class="field-error" id="link-url-error"></p>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">Dodaj</button>
+                                <button type="button" id="link-check" class="btn-secondary">Sprawdź URL</button>
+                            </div>
+                            <p class="form-status" id="link-status" role="status" aria-live="polite"></p>
+                        </form>
+                        <ul id="links-list" class="links-list" aria-label="Zapisane odnośniki"></ul>
+                    </div>
                 </aside>
 
                 <aside class="widgets-section">
-                    <h2>Moduły (Lab 02)</h2>
+                    <h2>Informacje</h2>
                     <div class="widgets-container">
                         <div id="weather-box" class="widget-slot">Widget pogodowy</div>
                         <div id="calendar-box" class="widget-slot">Kalendarz</div>
@@ -121,9 +145,9 @@
                 </aside>
             </div>
         </main>
-        
+
         <footer>
-            <p>&copy; 2026 Konrad Matusik - Projekt Laboratorium 01</p>
+            <p>&copy; 2026 Konrad Matusik - Projekt Laboratorium 02</p>
         </footer>
     </body>
 </html>
