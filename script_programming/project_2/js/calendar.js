@@ -70,7 +70,7 @@ export function initCalendar() {
     function render() {
         const now = new Date();
 
-        // Datę odświeżamy tylko przy zmianie dnia, zegar co sekundę (bez migotania).
+        
         const { weekday, day, monthYear } = getDateParts(now);
         const dayKey = `${weekday}|${day}|${monthYear}`;
         if (dayKey !== renderedDay) {

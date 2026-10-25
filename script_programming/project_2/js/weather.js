@@ -92,7 +92,6 @@ export function initWeather(city = DEFAULT_STATION) {
         return;
     }
 
-    // Szkielet widgetu: nagłówek z wyborem miasta + obszar na treść/stany.
     const select = createEl('select', { attrs: { id: 'weather-station', 'aria-label': 'Wybierz miasto' } });
     for (const { slug, label } of STATIONS) {
         const option = createEl('option', { text: label, attrs: { value: slug } });
@@ -120,7 +119,7 @@ export function initWeather(city = DEFAULT_STATION) {
         try {
             const data = await fetchWeather(slug);
             if (currentRequest !== requestId) {
-                return; // zignoruj spóźnioną odpowiedź po zmianie miasta
+                return; 
             }
             content.replaceChildren(buildWeatherView(data, station?.label ?? slug));
         } catch {

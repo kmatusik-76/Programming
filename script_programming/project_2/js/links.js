@@ -70,7 +70,7 @@ function loadLinks() {
         if (!Array.isArray(parsed)) {
             return [];
         }
-        // Dane z localStorage traktujemy jako niezaufane: ponowna walidacja każdego wpisu.
+        
         return parsed
             .filter((item) => item && typeof item.id === 'string' && typeof item.name === 'string')
             .map((item) => ({ id: item.id, name: item.name, url: sanitizeUrl(item.url) }))
@@ -84,7 +84,7 @@ function saveLinks(links) {
     try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(links));
     } catch {
-        // Brak miejsca lub storage zablokowany - lista działa w bieżącej sesji.
+        
     }
 }
 
@@ -103,7 +103,7 @@ export function initLinks() {
     }
 
     let links = loadLinks();
-    const pendingDeletes = new Map(); // id -> id timera potwierdzenia
+    const pendingDeletes = new Map(); 
 
     function setFieldError(input, errorEl, message) {
         errorEl.textContent = message;
@@ -185,7 +185,7 @@ export function initLinks() {
         render();
     }
 
-    // Dodawanie wpisu
+    
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -220,7 +220,7 @@ export function initLinks() {
         setStatus('');
     });
 
-    // Usuwanie: delegacja zdarzeń na kontenerze listy + potwierdzenie "Na pewno?" (dwuklik)
+    
     list.addEventListener('click', (event) => {
         const button = event.target.closest('button[data-id]');
         if (!button || !list.contains(button)) {
@@ -245,7 +245,7 @@ export function initLinks() {
         pendingDeletes.set(id, timerId);
     });
 
-    // Bonus: asynchroniczny test osiągalności domeny
+    
     checkButton.addEventListener('click', async () => {
         const url = validateUrl();
         if (url === null) {

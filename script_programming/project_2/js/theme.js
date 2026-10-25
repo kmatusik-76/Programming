@@ -24,7 +24,7 @@ function storeTheme(theme) {
     try {
         localStorage.setItem(STORAGE_KEY, theme);
     } catch {
-        // Storage niedostępny (np. tryb prywatny) - motyw działa, ale nie jest zapamiętany.
+        
     }
 }
 
