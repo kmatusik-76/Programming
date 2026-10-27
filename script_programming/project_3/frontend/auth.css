@@ -1,0 +1,89 @@
+/* =================================================================== */
+/* auth.css - Minimalne style dla logowania i paska sesji (Lab 03)     */
+/* =================================================================== */
+
+:root {
+  --auth-bg: var(--card-bg, #ffffff);
+  --auth-text: var(--text, #222222);
+  --auth-border: var(--border, #cccccc);
+  --auth-primary: var(--primary, #1976d2);
+}
+
+body.dark {
+  --auth-bg: var(--card-bg, #222222);
+  --auth-text: var(--text, #f5f5f5);
+  --auth-border: var(--border, #555555);
+  --auth-primary: var(--primary, #90caf9);
+}
+
+/* Pasek tożsamości w nawigacji */
+.user-session, .user-info { display: flex; align-items: center; gap: 0.5rem; }
+.user-session strong { color: var(--auth-primary); }
+.user-session button {
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--auth-primary);
+  background: transparent;
+  color: var(--auth-primary);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+.user-session button:hover {
+  background: var(--auth-primary);
+  color: #ffffff;
+}
+.hidden { display: none !important; }
+
+/* Okno modalne logowania */
+.auth-dialog {
+  width: 90%;
+  max-width: 340px;
+  border-radius: 8px;
+  border: 1px solid var(--auth-border);
+  background-color: var(--auth-bg);
+  color: var(--auth-text);
+  padding: 1.25rem;
+  font-family: inherit;
+}
+
+.auth-header { display: flex; justify-content: space-between; align-items: center; }
+.auth-header h3 { margin: 0; }
+.btn-close { background: none; border: none; font-size: 1.5rem; color: var(--auth-text); cursor: pointer; }
+
+/* Komunikaty i pola formularza */
+.auth-message { color: #d32f2f; font-size: 0.85rem; margin: 0.5rem 0; }
+.auth-message.success { color: #2e7d32; }
+.error-field { border-color: #d32f2f !important; }
+
+.auth-dialog label { display: block; font-size: 0.85rem; margin: 0.5rem 0 0.2rem; }
+.auth-dialog input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--auth-border);
+  border-radius: 4px;
+  background-color: var(--auth-bg);
+  color: var(--auth-text);
+}
+
+/* Przyciski i akcje */
+.form-actions { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+.form-actions button[type="submit"] {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--auth-border);
+  background-color: var(--auth-primary);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--auth-primary);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.85rem;
+}

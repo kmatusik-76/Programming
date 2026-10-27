@@ -1,0 +1,3 @@
+"""
+Pakiet aplikacji backendowej FastAPI.
+"""
